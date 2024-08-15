@@ -1,7 +1,7 @@
 import requests
 from .events import print_event_details
 
-def get_latest_events(username, page, per_page, token):
+def get_latest_events(username, page, events_per_page, token):
     url = f"https://api.github.com/users/{username}/events"
     headers = {
         "Accept": "application/vnd.github.v3+json"
@@ -12,7 +12,7 @@ def get_latest_events(username, page, per_page, token):
 
     params = {
         "page": page,
-        "per_page": per_page
+        "per_page": events_per_page
     }
 
     try:
@@ -24,11 +24,11 @@ def get_latest_events(username, page, per_page, token):
         for event in latest_events:
             print_event_details(event)
 
-        if len(events) == per_page:
+        if len(events) == events_per_page:
             while True:
                 user_input = input("Show more events? (y/n): ")
                 if user_input.lower() == 'y':
-                    get_latest_events(username, page + 1, per_page, token)
+                    get_latest_events(username, page + 1, events_per_page, token)
                     break
                 elif user_input.lower() == 'n':
                     break
