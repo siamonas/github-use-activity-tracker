@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
 
-def load_env_variables():
+def get_token():
     load_dotenv()
     return os.getenv("GITHUB_TOKEN")
