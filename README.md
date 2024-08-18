@@ -18,7 +18,7 @@ It is inspired from the [GitHub User Activity](https://roadmap.sh/projects/githu
 ## Installation
 1. **Clone the Repository**:
    ```sh
-   git clone https://github.com/your-username/github-user-activity-tracker.git
+   git clone https://github.com/siamonas/github-user-activity-tracker.git
    cd github-user-activity-tracker
 2. Create and Activate a Virtual Environment
    ```sh
